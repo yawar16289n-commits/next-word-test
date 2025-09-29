@@ -9,13 +9,13 @@ export const metadata = {
 
 export default async function Home() {
   const resPosts = await fetch(
-    "https://grayscalejacket.com/wp-json/wp/v2/posts?per_page=3",
+    `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?per_page=3`,
     { next: { revalidate: 60 } }
   );
   const posts = await resPosts.json();
 
   const resCategories = await fetch(
-    "https://grayscalejacket.com/wp-json/wp/v2/categories?per_page=5",
+    `${process.env.NEXT_PUBLIC_WORDPRESS_API}/categories?per_page=5`,
     { next: { revalidate: 60 } }
   );
   const categories = await resCategories.json();

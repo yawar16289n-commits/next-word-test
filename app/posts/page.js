@@ -7,7 +7,7 @@ export const metadata = {
 
 export default async function PostsPage() {
   const res = await fetch(
-    "https://grayscalejacket.com/wp-json/wp/v2/posts?per_page=10&_embed",
+    `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?per_page=10&_embed`,
     { next: { revalidate: 60 } }
   );
   const posts = await res.json();

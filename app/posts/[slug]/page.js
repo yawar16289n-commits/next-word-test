@@ -1,6 +1,6 @@
 // app/posts/[slug]/page.js
 export async function generateStaticParams() {
-  const res = await fetch("https://grayscalejacket.com/wp-json/wp/v2/posts");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`);
   const posts = await res.json();
 
   return posts.map((post) => ({
@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }) {
   const res = await fetch(
-    `https://grayscalejacket.com/wp-json/wp/v2/posts?slug=${params.slug}`,
+    `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?slug=${params.slug}&_embed`,
     { next: { revalidate: 60 } }
   );
   const posts = await res.json();
