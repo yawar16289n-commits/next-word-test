@@ -5,10 +5,14 @@ export const metadata = {
   description: "Browse all blog posts powered by WordPress REST APIs.",
 };
 
+export const revalidate = 60; // ISR applies globally
+
 export default async function PostsPage() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?per_page=10&_embed`,
-    { next: { revalidate: 60 } }
+    {
+      next: { revalidate: 60 },
+    }
   );
   const posts = await res.json();
 
