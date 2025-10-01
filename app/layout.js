@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Link from "next/link";
 
 export const metadata = {
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
             © {new Date().getFullYear()} My Blog. All rights reserved.
           </div>
         </footer>
+        <SpeedInsights />
       </body>
     </html>
   );
