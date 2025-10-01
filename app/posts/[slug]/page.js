@@ -43,7 +43,7 @@ export default async function Post({ params }) {
 
       {/* Featured image */}
       {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-        <img
+        <image
           src={post._embedded["wp:featuredmedia"][0].source_url}
           alt={post.title.rendered}
           className="rounded-lg mb-6 w-full h-72 object-cover"

@@ -28,7 +28,7 @@ export default async function PostsPage() {
           >
             {/* Featured image (if available) */}
             {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-              <img
+              <image
                 src={post._embedded["wp:featuredmedia"][0].source_url}
                 alt={post.title.rendered}
                 className="rounded-lg mb-4 w-full h-48 object-cover"
