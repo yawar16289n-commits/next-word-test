@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://grayscalejacket.com
+
+# Sitemaps
+Sitemap: https://grayscalejacket.com/sitemap.xml

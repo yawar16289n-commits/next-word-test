@@ -16,6 +16,8 @@ export async function generateMetadata({ params }) {
   const post = posts[0];
   const yoast = post._yoast_head_json;
 
+  console.log(post._yoast_head_json);
+
   return {
     title: yoast?.title || post.title.rendered,
     description: yoast?.description || post.excerpt.rendered,
